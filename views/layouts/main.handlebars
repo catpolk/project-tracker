@@ -2,27 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2 Progress Tracker</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Tracker</title>
+  <link rel="stylesheet" href="/css/jass.css">
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to the Progress Tracker</h1>
-    </header>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+     Progress Tracker
+    </h1>
+    <!-- Only display the logout button if the user is logged in -->
+    {{#if logged_in}}
     <nav>
-        <a href="/">Home</a>
+      <button class="btn" id="logout">logout</button>
     </nav>
-    <main>
-        <aside>
-            <h2>Start Your Progression!</h2>
-        </aside>
-        <div>
-            {{{body}}}
-        </div>
-    </main>
+    {{/if}}
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  <!-- Only include the logout script if the user is logged in -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
