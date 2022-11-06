@@ -1,4 +1,5 @@
-DROP DATABASE IF EXISTS project_db;
+DROP DATABASE IF EXISTS progress_db;
+
 
 CREATE DATABASE project_db;
 
@@ -20,3 +21,6 @@ CREATE TABLE roles (
     responsibility VARCHAR(100) NOT NULL,
     future_plans VARCHAR(100) 
 );
+=======
+
+
