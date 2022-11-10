@@ -1,6 +1,6 @@
-const { Task } = require('../models/index');
+const { Tasks } = require('../models/index');
 
-const Task = [
+const taskData = [
   {
     id: 1,
     task_name: 'Express.js',
@@ -63,6 +63,6 @@ const Task = [
   },
 ];
 
-const seedTask = () => Task.bulkCreate(taskData);
+const seedTask = () => Tasks.bulkCreate(taskData);
 
 module.exports = seedTask;

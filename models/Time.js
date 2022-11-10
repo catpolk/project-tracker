@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Time extends Model {}
+class Times extends Model {}
 
-Time.init(
+Times.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,4 +32,4 @@ Time.init(
   }
 );
 
-module.exports = Time;
+module.exports = Times;
