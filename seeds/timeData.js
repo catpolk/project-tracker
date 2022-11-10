@@ -1,6 +1,6 @@
-const { Task } = require('../models/index');
+const { Time } = require('../models/index');
 
-const taskData = [
+const Time = [
   {
     id: 1,
     name: 'Adrian',
@@ -33,6 +33,6 @@ const taskData = [
   },
 ];
 
-const seedTask = () => Task.bulkCreate(taskData);
+const seedTime = () => Time.bulkCreate(timeData);
 
-module.exports = seedTask;
+module.exports = seedTime;
