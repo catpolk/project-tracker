@@ -1,12 +1,17 @@
-const User = require('./User');
-const Task = require('./Task');
+const Time = require('./Time');
+const Tasks = require('./Tasks');
+const Users = require('./Users');
 
-Task.hasMany(User, {
-    foreignKey: 'task_id',
+Tasks.hasMany(Users, {
+    foreignKey: 'user_id',
 });
 
-User.belongsTo(Task, {
-    foreignKey: 'task_id',
+Users.belongsTo(Tasks, {
+    foreignKey: 'user_id',
 });
 
-module.exports = { User, Task };
+
+
+
+
+module.exports = { Time, Tasks, Users };
