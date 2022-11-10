@@ -2,11 +2,7 @@ const Time = require('./Time');
 const Tasks = require('./Tasks');
 const Users = require('./Users');
 
-Tasks.hasMany(Users, {
-    foreignKey: 'user_id',
-});
-
-Users.belongsTo(Tasks, {
+Users.hasMany(Tasks, {
     foreignKey: 'user_id',
 });
 
