@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Task extends Model {}
+class Tasks extends Model {}
 
-Task.init(
+Tasks.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // primaryKey: true,
+       primaryKey: true,
       autoIncrement: true,
     },
     task_name: {
@@ -17,11 +17,11 @@ Task.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     task_id: { 
       type: DataTypes.INTEGER,
-      autoIncrement: true,
+      autoIncrement: false,
     }
   },
   {
@@ -32,4 +32,4 @@ Task.init(
   }
 );
 
-module.exports = Task;
+module.exports = Tasks;
