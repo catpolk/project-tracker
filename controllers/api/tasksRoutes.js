@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { Tasks } = require('../../models');
 
-router.get('/completed_tasks', async (req, res) => {
-    try{
-        const taskData = await Tasks.findByPk(req.params.id);
-        console.log(taskData)
-        res.render ('task', taskData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+// /api/task/
+router.get('/', async (req, res) => {
+    const data = await Tasks.findAll({})
+     if(data){
+        const tasks = data.map(task => task.get( {plain: true} ))
+        console.log(tasks);
+        res.status(200).json(tasks);
+      }
 });
 
 router.post('./complete', async (req, res) => {
