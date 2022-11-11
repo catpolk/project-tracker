@@ -27,14 +27,6 @@ router.get('/roadmap', async (req, res) => {
   }
 });
 
-router.get('/profile', async (req, res) => {
-  try {
-    res.render('profile', {});
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 router.get('/planning', async (req, res) => {
   try {
     res.render('planning', {});
