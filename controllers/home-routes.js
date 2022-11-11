@@ -58,7 +58,19 @@ router.get('/planning', async (req, res) => {
 
 router.get('/users', async (req, res) => {
   try {
+    const userData = await Task.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const users = userData.map((project) => project.get({ plain: true }));
     res.render('users', {
+      users,
       logged_in: req.session.logged_in
     });
   } catch (err) {
