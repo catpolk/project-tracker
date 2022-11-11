@@ -7,8 +7,8 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
 
   await seedTime();
-  await seedTasks();
   await seedUsers();
+  await seedTasks();
 
   process.exit(0);
 };

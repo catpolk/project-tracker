@@ -1,1 +1,56 @@
-<h2>Progress!</h2>
+{{!-- Pie chart for Completed tasks chart --}}
+
+<style type="text/css">
+  .pieChart{
+    width: 800px;
+    height: 800px;
+    margin-left: 400px;
+    margin-top: 100px;
+  }
+  #text-pie{
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+</style>
+
+<h2 id="text-pie">Progress Chart</h2>
+<br>
+<p id="text-pie"> The pie chart shows the percentage of each user completed tasks</p>
+
+
+<div class="pieChart">
+<canvas id="pie-chart-progress"></canvas>
+</div>
+
+<script type="text/javascript">
+  const data = {
+    labels: [
+      {{#each users}}
+        "{{this}}"{{#unless @last}},{{/unless}}
+      {{/each}}
+    ],
+    datasets: [{
+      label: 'Completed Tasks',
+      data: [
+        {{#each completedTasks}}
+          {{this}}{{#unless @last}},{{/unless}}
+        {{/each}}
+      ],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(60, 301, 200)',
+        'rgb(456, 306, 105)',
+        'rgb(84, 205, 235)'
+      ],
+      hoverOffset: 5
+    }]
+  };
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
+  
+  const ctx = document.getElementById('pie-chart-progress');
+  const myChart = new Chart(ctx, config);
+</script>
