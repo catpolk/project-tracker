@@ -4,11 +4,15 @@
   .pieChart{
     width: 800px;
     height: 800px;
+    margin-left: 400px;
+    margin-top: 100px;
   }
-  
 </style>
 
 <h2>Pie Chart</h2>
+<br>
+<p> The pie chart shows the percentage of each user completed tasks</p>
+
 
 <div class="pieChart">
 <canvas id="pie-chart-progress"></canvas>
@@ -43,7 +47,6 @@
     data: data,
   };
   
-
   const ctx = document.getElementById('pie-chart-progress');
   const myChart = new Chart(ctx, config);
 </script>
