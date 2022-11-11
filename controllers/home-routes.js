@@ -45,10 +45,24 @@ router.get('/planning', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {
+router.get('/users/:id', async (req, res) => {
   try {
-    res.render('users', {});
+    const dbUserData = await Users.findByPk(req.params.id, {
+      include: [
+        {
+          model: Tasks,
+          attributes: [
+            'task_name',
+            'user_id',
+          ],
+        },
+      ],
+    });
+
+    const user = dbUserData.get({ plain: true });
+    res.render('users', { user });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
