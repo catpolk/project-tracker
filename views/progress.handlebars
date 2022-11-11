@@ -26,42 +26,31 @@
 <script type="text/javascript">
   const data = {
     labels: [
-      {{ #each users }}
-  "{{this}}"{ { #unless @last } }, {
-    {
-      /unless}}
-      {
-        {
-          /each}}
+      {{#each users}}
+        "{{this}}"{{#unless @last}},{{/unless}}
+      {{/each}}
     ],
-          datasets: [{
-            label: 'Completed Tasks',
-            data: [
-              {{ #each completedTasks }}
-          {{ this}} { { #unless @last } }, {
-          {
-            /unless}}
-            {
-              {
-                /each}}
+    datasets: [{
+      label: 'Completed Tasks',
+      data: [
+        {{#each completedTasks}}
+          {{this}}{{#unless @last}},{{/unless}}
+        {{/each}}
       ],
-                backgroundColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
-                  'rgb(60, 301, 200)',
-                  'rgb(456, 306, 105)',
-                  'rgb(84, 205, 235)'
-                ],
-                  hoverOffset: 5
-              }]
-            };
-            const config = {
-              type: 'doughnut',
-              data: data,
-            };
-
-            const ctx = document.getElementById('pie-chart-progress');
-            const myChart = new Chart(ctx, config);
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4
+    }]
+  }
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
+  const ctx = document.getElementById('pie-chart-progress');
+  const myChart = new Chart(ctx, config);
 </script>
 
 {{!--
