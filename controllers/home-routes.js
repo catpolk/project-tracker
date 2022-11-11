@@ -1,11 +1,21 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Users, Tasks } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage', {});
+    const data = await Users.findAll({
+      include: [Tasks]
+    })
+    if(data){
+      const users = data.map(user => user.get( {plain: true} ))
+      console.log(users);
+      console.log(users[0].tasks);
+      console.log(users[0].tasks.length);
+      
+      res.render('homepage', {});
+    }
   } catch (err) {
     res.status(500).json(err);
   }

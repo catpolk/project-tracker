@@ -8,7 +8,7 @@ Tasks.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-       primaryKey: true,
+      primaryKey: true,
       autoIncrement: true,
     },
     task_name: {
@@ -18,10 +18,6 @@ Tasks.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },
-    task_id: { 
-      type: DataTypes.INTEGER,
-      autoIncrement: false,
     }
   },
   {
