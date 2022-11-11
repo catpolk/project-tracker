@@ -1,9 +1,18 @@
-
 {{!-- Pie chart for Completed tasks chart --}}
+
+<style type="text/css">
+  .pieChart{
+    width: 800px;
+    height: 800px;
+  }
+  
+</style>
+
 <h2>Pie Chart</h2>
-<canvas id="pie-chart-progress" width="100" height="100"></canvas>
 
-
+<div class="pieChart">
+<canvas id="pie-chart-progress"></canvas>
+</div>
 
 <script type="text/javascript">
   const data = {
@@ -31,6 +40,7 @@
     type: 'pie',
     data: data,
   };
+  
 
   const ctx = document.getElementById('pie-chart-progress');
   const myChart = new Chart(ctx, config);
