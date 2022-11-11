@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Users, Tasks } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection');
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
@@ -22,11 +23,20 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/progress', async (req, res) => {
-  try {
-    res.render('progress', {});
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // try {
+    const data = await Tasks.findAll({
+      attributes: ['user.username', [sequelize.fn('COUNT', 'task.user_id'), 'completedTasks']],
+      group: 'task.user_id',
+      include: [{ model: Users, required: true }]
+    })
+    
+    const users = data.map(task => task.dataValues.user.username)
+    const completedTasks = data.map(task => task.dataValues.completedTasks)
+    
+    res.render('progress', { users: users, completedTasks: completedTasks });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 router.get('/roadmap', async (req, res) => {
