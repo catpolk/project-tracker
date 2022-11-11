@@ -1,6 +1,6 @@
 const { Time } = require('../models/index');
 
-const times = [
+const timeData = [
   {
     id: 1,
     name: 'Adrian',
@@ -33,6 +33,6 @@ const times = [
   },
 ];
 
-const seedTime = () => Time.bulkCreate(times);
+const seedTime = () => Time.bulkCreate(timeData);
 
 module.exports = seedTime;
