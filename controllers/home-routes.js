@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//end point to the progress menu 
 router.get('/progress', async (req, res) => {
   try {
     const data = await Task.findAll({
