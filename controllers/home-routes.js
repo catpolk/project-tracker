@@ -58,11 +58,10 @@ router.get('/planning', async (req, res) => {
 
 router.get('/users', async (req, res) => {
   try {
-    const userData = await Task.findAll({
+    const userData = await User.findAll({
       include: [
         {
-          model: User,
-          attributes: ['username'],
+          model: Task,
         },
       ],
     });

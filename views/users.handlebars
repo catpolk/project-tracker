@@ -1,14 +1,15 @@
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+{{#each users as |user| }}
 <div class="card">
   <img src="Leader.jpg" alt="" style="width:100%">
   <h1>{{user.username}}</h1>
-  <h1 class="title">{{user.email}}</h1>
+  <p class="title">{{user.email}}</p>
   <p class="title">Project(s)</p>
 
   <p><a href="http://localhost:3001/roadmap"><button>Road Map</button></a></p>
 </div>
+{{/each}}
 
 {{!-- {{#each users as |user| }}
 <div class="card">
