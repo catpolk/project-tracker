@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Task } = require('../models');
+const { User, Task, Message } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
 
@@ -89,11 +89,10 @@ router.get('/planning', async (req, res) => {
 
 router.get('/users', async (req, res) => {
   try {
-    const userData = await Task.findAll({
+    const userData = await User.findAll({
       include: [
         {
-          model: User,
-          attributes: ['username'],
+          model: Task,
         },
       ],
     });
@@ -141,6 +140,39 @@ router.get('/login', async (req, res) => {
       return;
     }
     res.render('login', {
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/planning', async (req, res) => {
+  try {
+    const messageData = await Message.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['description'],
+        },
+      ],
+    });
+    console.log('yo')
+    console.log(messageData)
+    const messages = messageData.map((message) => message.get({ plain: true }));
+    console.log(messages)
+    res.render('planning', {
+      messages,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/message', async (req, res) => {
+  try {
+    res.render('message', {
       logged_in: req.session.logged_in
     });
   } catch (err) {
