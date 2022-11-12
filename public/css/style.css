@@ -158,3 +158,30 @@ button:hover,
 a:hover {
     opacity: 0.7;
 }
+
+/* pie chart  */
+.pieChart {
+    width: 800px;
+    height: 800px;
+    margin-left: 400px;
+    margin-top: 100px;
+  }
+
+  #text-pie {
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+
+  /* user page questions  */
+  .user-page {
+    /* padding: 20px; */
+    margin: 40px;
+  }
+  .addtask {
+    font-size: 25px;
+  }
+  .btn-cls {
+    background-color: rgb(45, 76, 189);
+    color: white;
+  }
+
