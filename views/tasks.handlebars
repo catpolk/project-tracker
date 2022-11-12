@@ -1,0 +1,38 @@
+<div class="question-box"> 
+  {{#if message}}
+    <p>{{message}}</p>
+  {{/if}}
+  <form action="/tasks", method="POST">
+    <div class="user-page">
+      Assign a task
+      {{!-- select user name --}}
+      <h4>Select your name</h4>
+      <select name="userId" id="name">
+        {{#each users}}
+          <option value="{{this.dataValues.id}}">{{this.dataValues.username}}</option>
+        {{/each}}
+      </select>
+      <br><br>
+
+      {{!-- users adds a task  --}}
+      <h4>Add your task</h4>
+        <select name="taskId" id="task">
+          {{#each tasks}}
+            <option value="{{this.dataValues.id}}">{{this.dataValues.task_name}}</option>
+          {{/each}}
+        </select>
+      <button type="submit" class="btn-cls" id="result-submit">Assign</button>  
+      <br><br>
+
+      {{!-- delete task 
+      <h4>Delete your task</h4>
+      <select name="task" id="task">
+        {{#each tasks}}
+          <option value="{{this.dataValues.id}}">{{this.dataValues.task_name}}</option>
+        {{/each}}
+      </select>
+      <button type="submit" class="btn-cls" id="result-submit">Delete</button>
+      <br><br> --}}
+    </div>
+  </form>
+</div>

@@ -1,9 +1,42 @@
-# <The Project Tracker>
+# PROJECT NAME
+> THE ARRAYS PROJECT TRACKER 
 
-## This application helps teams to work on the same project. The program keeps track of the overall progress as well as keeps track of each team member. 
+## TABLE OF CONTENTS
+* [General Info](#general-information)
+* [Usage](#usage)
+* [Live Site Link](#live-site-link)
+* [Technologies Used](#technologies-used)
+* [Contact](#contact)
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+## GENERAL INFORMATION
+A PROJECT MANAGEMENT APPLICATION THAT ALLOWS THE USER TO MONITOR TASK COMPLETION EFFORTS AND DELEGATION. 
+
+IMAGES
+
+IMAGES
+
+IMAGES
+
+## USAGE
+
+## LIVE SITE LINK
+website link
+
+## TECHNOLOGIES USED
+Visual Studio Code,
+HTML,
+CSS,
+HANDLEBARS,
+MYSQL / SEQUELIZE,
+EXPRESS JS,
+NODE JS
+
+## PROJECT STATUS
+
+## CONTACT
+CREATED BY 'THE ARRAYS' :
+CAROLINE POLK,
+ADRIAN BROWN,
+JUSTIN SNYDER,
+DEMETRIUS CARTER
 
