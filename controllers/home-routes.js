@@ -77,12 +77,12 @@ router.get('/users', async (req, res) => {
   }
 });
 
-router.get('/user/:id', async (req, res) => {
+router.get('/users/:id', async (req, res) => {
   try {
     const dbUserData = await User.findByPk(req.params.id, {
       include: [
         {
-          model: Tasks,
+          model: Task,
           attributes: [
             'task_name',
             'user_id',
