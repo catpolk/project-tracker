@@ -10,6 +10,30 @@
   <p><a href="http://localhost:3001/roadmap"><button>Road Map</button></a></p>
 </div>
 
+<div class="question-box"> 
+  <div class="user-page">
+        {{!-- users adds a task  --}}
+        <h3>Add your task</h3>
+        <p><strong id="display"></strong></p>
+        <label class="addtask" for="nameField">Select task: </label>
+        <input id="nameField" type="text"></input>
+        <button type="submit" class="btn-cls" id="result-submit">Save</button> 
+        <br><br>
+        {{!-- delete task  --}}
+        <h3>Delete your task</h3>
+        <p><strong id="display"></strong></p>
+        <label class="addtask" for="nameField">Select task: </label>
+        <input id="nameField" type="text"></input>
+        <button type="submit" class="btn-cls" id="result-submit">Delete</button>
+  </div>
+</div>
+
+
+
+
+
+
+
 {{!-- {{#each users as |user| }}
 <div class="card">
   <img src="Leader.jpg" alt="" style="width:100%">
