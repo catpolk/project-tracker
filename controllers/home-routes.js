@@ -49,11 +49,29 @@ router.get('/roadmap', async (req, res) => {
 //tasks end point 
 router.get('/tasks', async (req, res) => {
   try {
-    const tasks = await Task.findAll({ where: { user_id: null } });
+    const tasks = await Task.findAll({});
+    const users = await User.findAll({});
+    
     res.render('tasks', {
       tasks: tasks,
+      users: users,
       logged_in: req.session.logged_in
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//tasks end point 
+router.post('/tasks', async (req, res) => {
+  try {
+    console.log(req.body);
+
+    const task = await Task.findByPk(req.body.taskId);
+    task.user_id = req.body.userId;
+    task.save();
+  
+    res.redirect('/progress');
   } catch (err) {
     res.status(500).json(err);
   }
