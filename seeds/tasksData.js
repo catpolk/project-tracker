@@ -76,6 +76,18 @@ const taskData = [
     task_name: 'CSS',
     user_id: 1
   },
+  {
+    id: 16,
+    task_name: 'HTML',
+  },
+  {
+    id: 17,
+    task_name: 'Presentation',
+  },
+  {
+    id: 18,
+    task_name: 'Video presentation',
+  }
 ];
 
 const seedTask = () => Task.bulkCreate(taskData);

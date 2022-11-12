@@ -46,6 +46,19 @@ router.get('/roadmap', async (req, res) => {
   }
 });
 
+//tasks end point 
+router.get('/tasks', async (req, res) => {
+  try {
+    const tasks = await Task.findAll({ where: { user_id: null } });
+    res.render('tasks', {
+      tasks: tasks,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/planning', async (req, res) => {
   try {
     res.render('planning', {
@@ -54,7 +67,7 @@ router.get('/planning', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+}); 
 
 router.get('/users', async (req, res) => {
   try {
@@ -76,7 +89,7 @@ router.get('/users', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+}); 
 
 router.get('/user/:id', async (req, res) => {
   try {

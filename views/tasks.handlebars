@@ -1,0 +1,19 @@
+<div class="question-box"> 
+  <div class="user-page">
+        {{!-- users adds a task  --}}
+        <h4>Add your task</h4>
+          <select name="task" id="task">
+            {{#each tasks}}
+                <option value="{{this.dataValues.id}}">{{this.dataValues.task_name}}</option>
+            {{/each}}
+          </select>
+        <button type="submit" class="btn-cls" id="result-submit">Save</button>  
+        <br><br>
+        {{!-- delete task  --}}
+        <h4>Delete your task</h4>
+        <select name="task" id="task">
+            <option value="task">Select</option>
+        </select>
+        <button type="submit" class="btn-cls" id="result-submit">Delete</button>
+  </div>
+</div>
