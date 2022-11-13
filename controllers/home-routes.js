@@ -153,7 +153,7 @@ router.get('/planning', async (req, res) => {
   }
 });
 
-router.get('/message', async (req, res) => {
+router.get('/message', withAuth, async (req, res) => {
   try {
     res.render('message', {
       logged_in: req.session.logged_in
