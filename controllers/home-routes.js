@@ -51,7 +51,7 @@ router.get('/tasks', async (req, res) => {
   try {
     const tasks = await Task.findAll({});
     const users = await User.findAll({});
-    
+
     res.render('tasks', {
       tasks: tasks,
       users: users,
@@ -70,22 +70,12 @@ router.post('/tasks', async (req, res) => {
     const task = await Task.findByPk(req.body.taskId);
     task.user_id = req.body.userId;
     task.save();
-  
+
     res.redirect('/progress');
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-router.get('/planning', async (req, res) => {
-  try {
-    res.render('planning', {
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-}); 
 
 router.get('/users', async (req, res) => {
   try {
@@ -106,7 +96,7 @@ router.get('/users', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-}); 
+});
 
 router.get('/user/:id', async (req, res) => {
   try {
@@ -149,14 +139,7 @@ router.get('/login', async (req, res) => {
 
 router.get('/planning', async (req, res) => {
   try {
-    const messageData = await Message.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['description'],
-        },
-      ],
-    });
+    const messageData = await Message.findAll();
     console.log('yo')
     console.log(messageData)
     const messages = messageData.map((message) => message.get({ plain: true }));
@@ -170,7 +153,7 @@ router.get('/planning', async (req, res) => {
   }
 });
 
-router.get('/message', async (req, res) => {
+router.get('/message', withAuth, async (req, res) => {
   try {
     res.render('message', {
       logged_in: req.session.logged_in
