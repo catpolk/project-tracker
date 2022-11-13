@@ -213,3 +213,8 @@ a:hover {
 #messageDescription {
     font-size: 30px;
 }
+
+#loginContainer {
+    margin: 0 auto;
+    width: 250px;
+}
