@@ -1,7 +1,25 @@
-<a href="/message">AHHHHH</a>
+<head>
+    <style>
+        body {
+            background-image: url(../images/2.jpg);
+            background-repeat: repeat-y;
+        }
+    </style>
+</head>
 
-{{#each messages as |message|}}
-<div>
-    <h2>{{message.description}}</h2>
+<div id="planningBackground">
+    <a id="messageLink" href="/message">&#10133</a>
+
+
+    <div class="card-column">
+        {{#each messages as |message|}}
+        <div class="card" id="messageBox">
+            <div class="card-body">
+                <h3 class="card-title">{{message.name}}</h3>
+                <h6 class="card-subtitle mb-2 text-muted">{{format_date message.date_created}}</h6>
+                <p id="messageDescription" class="card-text">{{message.description}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
-{{/each}}

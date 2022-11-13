@@ -11,6 +11,11 @@ Message.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'Logged Out User'
+        },
         description: {
             type: DataTypes.STRING,
         },
@@ -19,6 +24,7 @@ Message.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
+
     },
     {
         sequelize,
