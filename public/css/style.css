@@ -118,6 +118,9 @@ body {
     border-radius: 6px;
     border-style: solid;
 }
+#width-text{
+    width: 500px;
+}
 
 @media screen and (max-width: 600px) {
     .timeline::after {
