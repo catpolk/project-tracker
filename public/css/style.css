@@ -154,6 +154,15 @@ a:hover {
     margin-top: 100px;
 }
 
+#background-image {
+    background-image: url('/images/progress_tracker.jpeg');
+    back
+}
+
+.landpage-height {
+    min-height: 1500px;
+}
+
 #text-pie {
     margin-left: 100px;
     margin-top: 20px;
