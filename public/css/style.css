@@ -165,23 +165,78 @@ a:hover {
     height: 800px;
     margin-left: 400px;
     margin-top: 100px;
-  }
+}
 
-  #text-pie {
+#background-image {
+    background-image: url('/images/progress_tracker.jpeg');
+    back
+}
+
+.landpage-height {
+    min-height: 1500px;
+}
+
+#text-pie {
     margin-left: 100px;
     margin-top: 20px;
-  }
+}
 
-  /* user page questions  */
-  .user-page {
+/* user page questions  */
+.user-page {
     /* padding: 20px; */
     margin: 40px;
-  }
-  .addtask {
+}
+
+.addtask {
     font-size: 25px;
-  }
-  .btn-cls {
+}
+
+.btn-cls {
     background-color: rgb(45, 76, 189);
     color: white;
-  }
+}
 
+#messageBox {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg,
+            rgba(187, 235, 255, 1) 0%,
+            rgba(187, 235, 255, 1) 12%,
+            rgba(170, 220, 241, 1) 75%,
+            rgba(195, 229, 244, 1) 100%);
+}
+
+#messageLink {
+    text-decoration: none;
+    font-size: 50px;
+}
+
+#messageTitle {
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    width: 590px;
+    position: relative;
+    right: 200px;
+    margin-bottom: 20px;
+}
+
+#messageContainer {
+    margin: 0 auto;
+    width: 250px;
+}
+
+#messageButton {
+    position: relative;
+    left: 45px
+}
+
+#messageDescription {
+    font-size: 30px;
+}
+
+#loginContainer {
+    margin: 0 auto;
+    width: 250px;
+}

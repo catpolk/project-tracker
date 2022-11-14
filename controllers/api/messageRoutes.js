@@ -6,6 +6,7 @@ router.post('/', async (req, res) => {
     try {
         console.log(req.body)
         const newMessage = await Message.create({
+            name: req.session.username,
             description: req.body.message,
         });
 
