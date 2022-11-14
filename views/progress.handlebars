@@ -1,8 +1,10 @@
-{{!-- Pie chart for Completed tasks chart --}}
+{{!-- Pie chart for tasks chart --}}
 
 <h2 id="text-pie">Progress Chart</h2>
-<br>
-<p id="text-pie"> The pie chart shows the percentage of each user completed tasks</p>
+
+<div id="width-text">
+<p id="text-pie">The pie chart represents how many tasks each employee is currently working on. A manager or an employee can add a task, new employees who work on the same project can sign up a new user and add a task to their user which will be reflected on the Progress chart.</p>
+</div>
 
 <div class="pieChart">
   <canvas id="pie-chart-progress"></canvas>
@@ -24,8 +26,11 @@
       ],
       backgroundColor: [
         'rgb(255, 99, 132)',
+        'rgb(540, 162, 235)',
         'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
+        'rgb(255, 205, 86)',
+        'rgb(90, 232, 125)',
+        'rgb(200, 99, 20)'
       ],
       hoverOffset: 4
     }]
@@ -37,53 +42,3 @@
   const ctx = document.getElementById('pie-chart-progress');
   const myChart = new Chart(ctx, config);
 </script>
-
-{{!--
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
-
-  <title>PIE chart using Chartjs,jQuery and Bootstrap</title>
-</head>
-
-<body>
-  <div class="container">
-    <h2 class="text-center">Our Progress</h2>
-    <canvas id="barChart" width="400" height="400"></canvas>
-
-  </div>
-</body>
-
-</html>
-<script type="text/javascript">
-            $(document).ready(function () {
-              var chartDiv = $("#barChart");
-              var myChart = new Chart(chartDiv, {
-                type: 'pie',
-                data: {
-                  labels: ["To Be Completed", "In Progress", "Complete"],
-                  datasets: [
-                    {
-                      data: [6, 4, 2],
-                      backgroundColor: [
-                        "#FF0000",
-                        "#0000FF",
-                        "#00FF00",
-                      ]
-                    }]
-                },
-                options: {
-                  title: {
-                    display: true,
-                    text: 'Pie Chart'
-                  },
-                  responsive: true,
-                  maintainAspectRatio: false,
-                }
-              });
-            });
-</script> --}}

@@ -25,7 +25,7 @@ router.get('/progress', async (req, res) => {
 
     const users = data.map(task => task.dataValues.user.username)
     const completedTasks = data.map(task => task.dataValues.completedTasks)
-
+    //rendering progress page
     res.render('progress', {
       users: users,
       completedTasks: completedTasks,
@@ -35,7 +35,7 @@ router.get('/progress', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//end point for the roadmap menu
 router.get('/roadmap', async (req, res) => {
   try {
     res.render('roadmap', {
@@ -51,7 +51,7 @@ router.get('/tasks', async (req, res) => {
   try {
     const tasks = await Task.findAll({});
     const users = await User.findAll({});
-
+    //rendering task page 
     res.render('tasks', {
       tasks: tasks,
       users: users,
@@ -62,7 +62,7 @@ router.get('/tasks', async (req, res) => {
   }
 });
 
-//tasks end point 
+//tasks end point POST req
 router.post('/tasks', async (req, res) => {
   try {
     console.log(req.body);
@@ -70,7 +70,7 @@ router.post('/tasks', async (req, res) => {
     const task = await Task.findByPk(req.body.taskId);
     task.user_id = req.body.userId;
     task.save();
-
+    //redirecting to a progress page 
     res.redirect('/progress');
   } catch (err) {
     res.status(500).json(err);
@@ -123,6 +123,7 @@ router.post('/tasks', async (req, res) => {
 //   }
 // });
 
+//user end point 
 router.get('/user', async (req, res) => {
   try {
     const dbGalleryData = await Gallery.findAll({
@@ -187,7 +188,7 @@ router.get('/user/painting/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//end point to login 
 router.get('/login', async (req, res) => {
   try {
     if (req.session.loggedIn) {
@@ -201,7 +202,7 @@ router.get('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//end point to planning
 router.get('/planning', async (req, res) => {
   try {
     const messageData = await Message.findAll();
@@ -217,7 +218,7 @@ router.get('/planning', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+//end point to message
 router.get('/message', withAuth, async (req, res) => {
   try {
     res.render('message', {

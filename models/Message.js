@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Create a new Sequelize model for Message
 class Message extends Model { }
 
 Message.init(
