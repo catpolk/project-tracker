@@ -1,0 +1,20 @@
+<main>
+  <header>
+    <h1 class="glow">Welcome to the Progressive Users</h1>
+    <h3>---------->  Please click Welcome to access users  <------------</h3>
+  </header>
+    {{!-- <div class="gallery">
+      {{{body}}}
+    </div> --}}
+</main>
+
+<section class="card">
+  <!-- The contents of this card links to the gallery page using the gallery ID -->
+  <a href="/user/gallery/{{id}}">
+   <!-- The card contains the gallery name as the card header -->
+    <header >{{name}}</header>
+    <!-- The card contains the first painting of the gallery -->
+    <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/IgQdQHryAzppOekzIw" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    {{!-- <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}"> --}}
+  </a>
+</section>
