@@ -1,4 +1,10 @@
-<!-- Add icon library -->
+<!-- For each gallery, the gallery-details partial is used to render the gallery data -->
+{{#each galleries as |gallery|}}
+{{> gallery-details}}
+{{/each}}
+
+
+{{!-- <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {{#each users as |user| }}
 <div class="card">
@@ -28,4 +34,4 @@
 
   <p><a href="http://localhost:3001/roadmap"><button>Road Map</button></a></p>
 </div>
-{{/each}} --}}
+{{/each}} --}} 

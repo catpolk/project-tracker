@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Task, Message } = require('../models');
+const { User, Task, Message, Gallery, Painting } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection');
 
@@ -77,46 +77,111 @@ router.post('/tasks', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {
+// router.get('/users', async (req, res) => {
+//   try {
+//     const userData = await User.findAll({
+//       include: [
+//         {
+//           model: Task,
+//         },
+//       ],
+//     });
+
+//     // Serialize data so the template can read it
+//     const users = userData.map((project) => project.get({ plain: true }));
+//     res.render('users', {
+//       users,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/users/:id', async (req, res) => {
+//   try {
+//     const dbUserData = await User.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Task,
+//           attributes: [
+//             'task_name',
+//             'user_id',
+//           ],
+//         },
+//       ],
+//     });
+
+//     const user = dbUserData.get({ plain: true });
+//     res.render('users', {
+//       user,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/user', async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const dbGalleryData = await Gallery.findAll({
       include: [
         {
-          model: Task,
+          model: Painting,
+          attributes: ['filename', 'description'],
         },
       ],
     });
 
-    // Serialize data so the template can read it
-    const users = userData.map((project) => project.get({ plain: true }));
+    const galleries = dbGalleryData.map((gallery) =>
+      gallery.get({ plain: true })
+    );
+
     res.render('users', {
-      users,
-      logged_in: req.session.logged_in
+      galleries,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/users/:id', async (req, res) => {
+// GET one gallery
+router.get('/user/gallery/:id', async (req, res) => {
   try {
-    const dbUserData = await User.findByPk(req.params.id, {
+    const dbGalleryData = await Gallery.findByPk(req.params.id, {
       include: [
         {
-          model: Task,
+          model: Painting,
           attributes: [
-            'task_name',
-            'user_id',
+            'id',
+            'title',
+            'artist',
+            'exhibition_date',
+            'filename',
+            'description',
           ],
         },
       ],
     });
 
-    const user = dbUserData.get({ plain: true });
-    res.render('users', {
-      user,
-      logged_in: req.session.logged_in
-    });
+    const gallery = dbGalleryData.get({ plain: true });
+    res.render('gallery', { gallery });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one painting
+router.get('/user/painting/:id', async (req, res) => {
+  try {
+    const dbPaintingData = await Painting.findByPk(req.params.id);
+
+    const painting = dbPaintingData.get({ plain: true });
+
+    res.render('painting', { painting });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
