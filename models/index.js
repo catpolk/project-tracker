@@ -1,4 +1,3 @@
-const Time = require('./Time');
 const Task = require('./Task');
 const User = require('./User');
 const Message = require('./Message')
@@ -21,4 +20,4 @@ Task.belongsTo(User);
 
 
 
-module.exports = { Time, Task, User, Message, Gallery, Painting };
+module.exports = { Task, User, Message, Gallery, Painting };
