@@ -27,21 +27,24 @@ body {
   box-sizing: border-box;
 }
 
-body {
-
+#image-roadmap {
   background-image: url('1.png');
   background-repeat: no-repeat;
   background-position: center;
 
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+body {
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* vertical line */ 
 .timeline {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
-
+/* vertical line */ 
 .timeline::after {
   content: '';
   position: absolute;
@@ -52,35 +55,35 @@ body {
   left: 50%;
   margin-left: -3px;
 }
-
+/* container around content */ 
 .container {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
 }
-
+/* circles on timeline */ 
 .container::after {
   content: '';
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -17px;
+  right: 669px;
   background-color: white;
   border: 4px solid #000;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
 }
-
+/* container left */
 .left {
-  left: 0;
+  right: -7%;
 }
-
+/* container right */ 
 .right {
   left: 50%;
 }
-
+/* arrows left */ 
 .left::before {
   content: " ";
   height: 0;
@@ -88,12 +91,12 @@ body {
   top: 22px;
   width: 0;
   z-index: 1;
-  right: 30px;
+  right: 700px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent red;
 }
-
+/* arrows right */ 
 .right::before {
   content: " ";
   height: 0;
@@ -106,45 +109,47 @@ body {
   border-width: 10px 10px 10px 0;
   border-color: transparent red transparent transparent;
 }
-
+/* fix circles on right side */ 
 .right::after {
-  left: -16px;
+  left: -10px;
 }
-
+/* content */ 
 .content {
   padding: 20px 30px;
   background-color: white;
   position: relative;
   border-radius: 6px;
   border-style: solid;
+  width: 500px;
 }
 #width-text{
     width: 500px;
 }
-
+/* media queries */ 
 @media screen and (max-width: 600px) {
+   /* timeline to the left */ 
   .timeline::after {
     left: 31px;
   }
-
+/* full width containers */ 
   .container {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
-
+/* arrows pointing left after */ 
   .container::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
   }
-
+/* circles in same spot */ 
   .left::after,
   .right::after {
     left: 15px;
   }
-
+/* right containers behave like left */ 
   .right {
     left: 0%;
   }
