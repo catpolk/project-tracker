@@ -5,13 +5,15 @@
 * [General Info](#general-information)
 * [Usage](#usage)
 * [Website Link](#website-link)
+* [GitHub Repository Link](#github-repository-link)
 * [Technologies Used](#technologies-used)
 * [Contact](#contact)
+
 
 ## GENERAL INFORMATION
 The Progress Tracker is an application that simplifies project management. With a clear understanding of who's working on what, you're able to carry  out your plan more effectively, which leads to more productivity. We envision businesses of all types from across the globe utilizing the Progress Tracker to execute their future plans at the highest and  most efficient levels. 
 
-<a href="https://ibb.co/7VktNwn"><img src="https://i.ibb.co/P4DGz7c/Screen-Shot-2022-11-12-at-5-53-56-PM.png" alt="Screen-Shot-2022-11-12-at-5-53-56-PM" border="0" /></a>
+<a href="https://ibb.co/4NHzdZp"><img src="https://i.ibb.co/6skzBRF/Screen-Shot-2022-11-14-at-10-06-02-PM.png" alt="Screen-Shot-2022-11-14-at-10-06-02-PM" border="0"></a><br /><a target='_blank' href='https://freeonlinedice.com/'></a><br />
 
 <a href="https://ibb.co/hMYp9fy"><img src="https://i.ibb.co/kymYB1x/Screen-Shot-2022-11-12-at-5-53-28-PM.png" alt="Screen-Shot-2022-11-12-at-5-53-28-PM" border="0" /></a>
 
@@ -29,7 +31,10 @@ The Progress Tracker is an application that simplifies project management. With 
 
 
 ## WEBSITE LINK
-website link
+https://evening-hollows-21055.herokuapp.com/user
+
+## GITHUB REPOSITORY LINK
+https://github.com/catpolk/project-2-The-Arrays
 
 ## TECHNOLOGIES USED
 VISUAL STUDIO CODE,
