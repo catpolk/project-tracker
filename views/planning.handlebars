@@ -15,6 +15,7 @@
         {{#each messages as |message|}}
         <div class="card" id="messageBox">
             <div class="card-body">
+                <button class="messageYO" type="submit" data-id="{{message.id}}">🗑️</button>
                 <h3 class="card-title">{{message.name}}</h3>
                 <h6 class="card-subtitle mb-2 text-muted">{{format_date message.date_created}}</h6>
                 <p id="messageDescription" class="card-text">{{message.description}}</p>
@@ -23,3 +24,4 @@
         {{/each}}
     </div>
 </div>
+<script src="./js/messageDelete.js"></script>
