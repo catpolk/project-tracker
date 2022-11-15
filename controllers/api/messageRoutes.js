@@ -16,4 +16,23 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+        const messageData = await Message.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (!messageData) {
+            res.status(404).json({ message: 'No Message found with this id!' });
+            return;
+        }
+
+        res.status(200).json(messageData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router; 
