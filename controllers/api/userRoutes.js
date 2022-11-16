@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Creates a new user and makes a session based on their username.
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +18,8 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// Logs in a user and makes a session based on their username
 
 router.post('/login', async (req, res) => {
   try {
@@ -48,6 +52,8 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// Logs a user out and destroys their session
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {

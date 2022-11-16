@@ -31,7 +31,7 @@ The Progress Tracker is an application that simplifies project management. With 
 
 
 ## WEBSITE LINK
-https://evening-hollows-21055.herokuapp.com/user
+https://evening-hollows-21055.herokuapp.com/
 
 ## GITHUB REPOSITORY LINK
 https://github.com/catpolk/project-2-The-Arrays

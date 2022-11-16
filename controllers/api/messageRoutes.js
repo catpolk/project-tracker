@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Message } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Creates a message based on its id
+
 router.post('/', async (req, res) => {
     try {
         console.log(req.body)
@@ -15,6 +17,8 @@ router.post('/', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+// Deletes a message based on its id
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {

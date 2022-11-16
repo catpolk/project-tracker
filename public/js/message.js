@@ -1,3 +1,5 @@
+// Creates a new message
+
 const messageFormHandler = async (event) => {
 
     event.preventDefault();

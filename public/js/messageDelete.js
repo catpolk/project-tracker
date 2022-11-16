@@ -1,3 +1,5 @@
+// Deletes a message based on its id
+
 const delMessageHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
 
